@@ -7,8 +7,7 @@ const Yelp ={
     }
   ).then(jsonResponse => {
     if(jsonResponse.businesses){
-      return jsonResponse.businesses.map(business => {
-        return{
+      return jsonResponse.businesses.map(business => ({
         id: business.id,
         imageSrc: business.image_url,
         name: business.name,
@@ -18,9 +17,8 @@ const Yelp ={
         zipCode: business.location.zipCode,
         category: business.categories[0].title,
         rating: business.rating,
-        reviewCount: business.reviewCount
-       }
-      });
+        reviewCount: business.review_count
+      }));
     }
   });
   }

@@ -22,6 +22,7 @@ class App extends Component {
     Yelp.search(term,location,sortBy).then(businesses => this.setState(
 			{businesses: businesses}
 		));
+		console.log(this.state.businesses);
 	}
 
   render() {
